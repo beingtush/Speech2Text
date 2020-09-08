@@ -37,9 +37,11 @@ def recognize_speech_from_mic():
                 speakText(my_text)  # Speaks back the text
 
         except LookupError:  # Exception when audio is not recognized
+            print('Sorry, Could Not Understand. Repeat again.')
             speakText('Sorry, Could Not Understand. Repeat again.')
 
         except sr.UnknownValueError:  # Exception for Unknown Values
+            print('Sorry, Could Not Understand. Repeat again.')
             speakText('Sorry, Could Not Understand. Repeat again.')
 
 
@@ -100,12 +102,12 @@ def search_keyword():
 
 
 class Speech2Text:
-    name = input("What is your name?\n ")
+    name = input("What is your name?\n")
     print("Hi " + name)
-    print("What would you like to do?\n "
-          "1. Convert speech to text using your Mic.\n"
-          "2. Ingest an Audio file to convert it to text.\n"
-          "3. Search for specific keyword in Audio Files.\n"
+    print("What would you like to do?\n"
+          "\033[93m\033[1m1. Convert speech to text using your Microphone.\n"
+          "2. Ingest an Audio file to convert it into text.\n"
+          "3. Search for specific keyword in Audio Files.\033[0m \033[0m \n"
           "Note : For option 2 and 3 put all your audio files inside the \033[93maudio_files\033[0m folder inside the "
           "\033[93mSpeech_To_Text\033[0m folder.")
     choice = input()
